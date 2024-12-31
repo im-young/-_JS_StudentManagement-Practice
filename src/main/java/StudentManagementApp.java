@@ -1,8 +1,10 @@
 import java.util.Scanner;
 
 public class StudentManagementApp {
+	//main메서드가 있는 class임
+	//여기서부터 시작
     public static void main(String[] args) {
-        StudentRepositoryImpl repository = new StudentRepositoryImpl();
+        StudentRepositoryImpl repository = new StudentRepositoryImpl(); //인터페이스임(class가 아님, 모든 메서드가 추상메서드 => 스펙만 정의)
         StudentView view = new StudentView();
         StudentController controller = new StudentController(repository, view);
 
@@ -10,11 +12,11 @@ public class StudentManagementApp {
         while (true) {
             System.out.println("1. 학생 추가\n2. 학생 수정\n3. 학생 삭제\n4. 학생 조회\n5. 모든 학생 조회\n6. 종료");
             System.out.print("옵션을 선택하세요: ");
-            int option = scanner.nextInt();
+            int option = scanner.nextInt(); // int값 입력 받기
             scanner.nextLine(); // 줄바꿈 제거
 
             switch (option) {
-                case 1 -> {
+                case 1 -> { // 화살표, 중괄호를 사용하고 break를 안써도 됨
                     System.out.print("학생 이름을 입력하세요: ");
                     String name = scanner.nextLine();
                     System.out.print("학생 전공을 입력하세요: ");

@@ -1,5 +1,8 @@
+
 class StudentController {
-    private final StudentRepository repository;
+	
+	//final : 한번 값이 대입되면 변경이 안된다
+    private final StudentRepository repository; 
     private final StudentView view;
 
     public StudentController(StudentRepository repository, StudentView view) {
